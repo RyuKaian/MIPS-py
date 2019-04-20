@@ -1,0 +1,65 @@
+addi $a0 $0 5
+addi $a1 $0 3
+jal add_both
+add $s0 $v0 $0
+
+# can be used with commas or without
+addi $a0, $0, 10
+addi $a1, $0, 1
+jal sub_both
+add $s1 $v0 $0
+
+# can add parts of the command as binary in back ticks
+addi `00100` `00000` `000010000010110`
+addi `00101` `00000` `000010000010001`
+jal and_both
+add $s2 $v0 $0
+
+addi $a0 $0 10
+addi $a1 $0 5
+jal or_both
+add $s3 $v0 $0
+
+# can accept code in binary or english, entire line has to be in back ticks (won't translate it to english)
+`00100000000001000000000000000101`
+`00100000000001010000000000100001`
+nop
+`00000000000000000000000000000000`
+jal nor_both
+add $s4 $v0 $0
+
+slt $t0 $s2 $s1
+nop
+nop
+nop
+beq $t0 $0 store_load_mem
+nop
+nop
+nop
+j exit
+
+store_load_mem: sw $s0 0($0)
+sw $s1 1($0)
+sw $s2 2($0)
+sw $s3 3($0)
+sw $s4 4($0)
+lw $s0 4($0)
+j exit
+
+add_both: add $v0 $a0 $a1
+jra
+
+sub_both: sub $v0 $a0 $a1
+jra
+
+and_both: and $v0 $a0 $a1
+jra
+
+or_both: or $v0 $a0 $a1
+jra
+
+nor_both: nor $v0 $a0 $a1
+jra
+
+
+exit:

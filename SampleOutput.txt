@@ -1,0 +1,591 @@
+(00100000000001000000000000000101, 'addi $a0 $0 5')
+(00100000000001010000000000000011, 'addi $a1 $0 3')
+(00001100000000000000000000100110, 'jal add_both')
+(00000000010000001000000000100000, 'add $s0 $v0 $0')
+(00100000000001000000000000001010, 'addi $a0, $0, 10')
+(00100000000001010000000000000001, 'addi $a1, $0, 1')
+(00001100000000000000000000101000, 'jal sub_both')
+(00000000010000001000100000100000, 'add $s1 $v0 $0')
+(00100000000001000000010000010110, 'addi `00100` `00000` `000010000010110`')
+(00100000000001010000010000010001, 'addi `00101` `00000` `000010000010001`')
+(00001100000000000000000000101010, 'jal and_both')
+(00000000010000001001000000100000, 'add $s2 $v0 $0')
+(00100000000001000000000000001010, 'addi $a0 $0 10')
+(00100000000001010000000000000101, 'addi $a1 $0 5')
+(00001100000000000000000000101100, 'jal or_both')
+(00000000010000001001100000100000, 'add $s3 $v0 $0')
+(00100000000001000000000000000101, '`00100000000001000000000000000101`')
+(00100000000001010000000000100001, '`00100000000001010000000000100001`')
+(00000000000000000000000000000000, 'nop')
+(00000000000000000000000000000000, '`00000000000000000000000000000000`')
+(00001100000000000000000000101110, 'jal nor_both')
+(00000000010000001010000000100000, 'add $s4 $v0 $0')
+(00000010010100010100000000101010, 'slt $t0 $s2 $s1')
+(00000000000000000000000000000000, 'nop')
+(00000000000000000000000000000000, 'nop')
+(00000000000000000000000000000000, 'nop')
+(00010001000000000000000000000100, 'beq $t0 $0 store_load_mem')
+(00000000000000000000000000000000, 'nop')
+(00000000000000000000000000000000, 'nop')
+(00000000000000000000000000000000, 'nop')
+(00001000000000000000000000110000, 'j exit')
+(10101100000100000000000000000000, 'sw $s0 0($0)')
+(10101100000100010000000000000001, 'sw $s1 1($0)')
+(10101100000100100000000000000010, 'sw $s2 2($0)')
+(10101100000100110000000000000011, 'sw $s3 3($0)')
+(10101100000101000000000000000100, 'sw $s4 4($0)')
+(10001100000100000000000000000100, 'lw $s0 4($0)')
+(00001000000000000000000000110000, 'j exit')
+(00000000100001010001000000100000, 'add $v0 $a0 $a1')
+(00011100000000000000000000000000, 'jra')
+(00000000100001010001000000100010, 'sub $v0 $a0 $a1')
+(00011100000000000000000000000000, 'jra')
+(00000000100001010001000000100100, 'and $v0 $a0 $a1')
+(00011100000000000000000000000000, 'jra')
+(00000000100001010001000000100101, 'or $v0 $a0 $a1')
+(00011100000000000000000000000000, 'jra')
+(00000000100001010001000000100111, 'nor $v0 $a0 $a1')
+(00011100000000000000000000000000, 'jra')
+
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000000001, instruction=00100000000001000000000000000101, instruction_eng='addi $a0 $0 5')
+Instruction_Decode(read_data1=None, read_data2=None, sign_extend=None, write_reg=None, control_signal=None, instruction_eng=None)
+Execution(zero=None, alu_result=None, write_data=None, write_reg=None, control_signal=None, instruction_eng=None)
+Memory(read_data=None, alu_result=None, write_reg=None, control_signal=None, instruction_eng=None)
+Write_back(instruction_eng=False)
+
+Memory content []
+Register content []
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000000010, instruction=00100000000001010000000000000011, instruction_eng='addi $a1 $0 3')
+Instruction_Decode(read_data1=$0, read_data2=$4, sign_extend=00000000000000000000000000000101, write_reg=$4, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'alu_op': 00, 'mem_write': 0, 'alu_src': 1, 'reg_write': 1}, instruction_eng='addi $a0 $0 5')
+Execution(zero=None, alu_result=None, write_data=None, write_reg=None, control_signal=None, instruction_eng=None)
+Memory(read_data=None, alu_result=None, write_reg=None, control_signal=None, instruction_eng=None)
+Write_back(instruction_eng=False)
+
+Memory content []
+Register content []
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000000011, instruction=00001100000000000000000000100110, instruction_eng='jal add_both')
+Instruction_Decode(read_data1=$0, read_data2=$5, sign_extend=00000000000000000000000000000011, write_reg=$5, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'alu_op': 00, 'mem_write': 0, 'alu_src': 1, 'reg_write': 1}, instruction_eng='addi $a1 $0 3')
+Execution(zero=00000000000000000000000000000000, alu_result=00000000000000000000000000000101, write_data=$4, write_reg=$4, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'mem_write': 0, 'reg_write': 1}, instruction_eng='addi $a0 $0 5')
+Memory(read_data=None, alu_result=None, write_reg=None, control_signal=None, instruction_eng=None)
+Write_back(instruction_eng=False)
+
+Memory content []
+Register content []
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000000100, instruction=00000000010000001000000000100000, instruction_eng='add $s0 $v0 $0')
+Instruction_Decode(read_data1=$0, read_data2=$0, sign_extend=00000000000000000000000000100110, write_reg=$0, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'alu_op': 00, 'mem_write': 0, 'alu_src': 0, 'reg_write': 0}, instruction_eng='jal add_both')
+Execution(zero=00000000000000000000000000000000, alu_result=00000000000000000000000000000011, write_data=$5, write_reg=$5, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'mem_write': 0, 'reg_write': 1}, instruction_eng='addi $a1 $0 3')
+Memory(read_data=None, alu_result=00000000000000000000000000000101, write_reg=$4, control_signal={'mem_to_reg': 0, 'reg_write': 1}, instruction_eng='addi $a0 $0 5')
+Write_back(instruction_eng=False)
+
+Memory content []
+Register content [(31, 00000000000000000000000000000011)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000100111, instruction=00000000100001010001000000100000, instruction_eng='add $v0 $a0 $a1')
+Instruction_Decode(read_data1=None, read_data2=None, sign_extend=None, write_reg=None, control_signal=None, instruction_eng=None)
+Execution(zero=00000000000000000000000000000001, alu_result=00000000000000000000000000000000, write_data=$0, write_reg=$0, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'mem_write': 0, 'reg_write': 0}, instruction_eng='jal add_both')
+Memory(read_data=None, alu_result=00000000000000000000000000000011, write_reg=$5, control_signal={'mem_to_reg': 0, 'reg_write': 1}, instruction_eng='addi $a1 $0 3')
+Write_back(instruction_eng='addi $a0 $0 5')
+
+Memory content []
+Register content [(4, 00000000000000000000000000000101), (31, 00000000000000000000000000000011)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000101000, instruction=00011100000000000000000000000000, instruction_eng='jra')
+Instruction_Decode(read_data1=$4, read_data2=$5, sign_extend=00000000000000000001000000100000, write_reg=$2, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'alu_op': 10, 'mem_write': 0, 'alu_src': 0, 'reg_write': 1}, instruction_eng='add $v0 $a0 $a1')
+Execution(zero=None, alu_result=None, write_data=None, write_reg=None, control_signal=None, instruction_eng=None)
+Memory(read_data=None, alu_result=00000000000000000000000000000000, write_reg=$0, control_signal={'mem_to_reg': 0, 'reg_write': 0}, instruction_eng='jal add_both')
+Write_back(instruction_eng='addi $a1 $0 3')
+
+Memory content []
+Register content [(4, 00000000000000000000000000000101), (5, 00000000000000000000000000000011), (31, 00000000000000000000000000000011)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000101001, instruction=00000000100001010001000000100010, instruction_eng='sub $v0 $a0 $a1')
+Instruction_Decode(read_data1=$0, read_data2=$0, sign_extend=00000000000000000000000000000000, write_reg=$0, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'alu_op': 00, 'mem_write': 0, 'alu_src': 0, 'reg_write': 0}, instruction_eng='jra')
+Execution(zero=00000000000000000000000000000000, alu_result=00000000000000000000000000001000, write_data=$5, write_reg=$2, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'mem_write': 0, 'reg_write': 1}, instruction_eng='add $v0 $a0 $a1')
+Memory(read_data=None, alu_result=None, write_reg=None, control_signal=None, instruction_eng=None)
+Write_back(instruction_eng='jal add_both')
+
+Memory content []
+Register content [(4, 00000000000000000000000000000101), (5, 00000000000000000000000000000011), (31, 00000000000000000000000000000011)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000000100, instruction=00000000010000001000000000100000, instruction_eng='add $s0 $v0 $0')
+Instruction_Decode(read_data1=None, read_data2=None, sign_extend=None, write_reg=None, control_signal=None, instruction_eng=None)
+Execution(zero=00000000000000000000000000000001, alu_result=00000000000000000000000000000000, write_data=$0, write_reg=$0, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'mem_write': 0, 'reg_write': 0}, instruction_eng='jra')
+Memory(read_data=None, alu_result=00000000000000000000000000001000, write_reg=$2, control_signal={'mem_to_reg': 0, 'reg_write': 1}, instruction_eng='add $v0 $a0 $a1')
+Write_back(instruction_eng=False)
+
+Memory content []
+Register content [(4, 00000000000000000000000000000101), (5, 00000000000000000000000000000011), (31, 00000000000000000000000000000011)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000000101, instruction=00100000000001000000000000001010, instruction_eng='addi $a0, $0, 10')
+Instruction_Decode(read_data1=$2, read_data2=$0, sign_extend=11111111111111111000000000100000, write_reg=$16, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'alu_op': 10, 'mem_write': 0, 'alu_src': 0, 'reg_write': 1}, instruction_eng='add $s0 $v0 $0')
+Execution(zero=None, alu_result=None, write_data=None, write_reg=None, control_signal=None, instruction_eng=None)
+Memory(read_data=None, alu_result=00000000000000000000000000000000, write_reg=$0, control_signal={'mem_to_reg': 0, 'reg_write': 0}, instruction_eng='jra')
+Write_back(instruction_eng='add $v0 $a0 $a1')
+
+Memory content []
+Register content [(2, 00000000000000000000000000001000), (4, 00000000000000000000000000000101), (5, 00000000000000000000000000000011), (31, 00000000000000000000000000000011)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000000110, instruction=00100000000001010000000000000001, instruction_eng='addi $a1, $0, 1')
+Instruction_Decode(read_data1=$0, read_data2=$4, sign_extend=00000000000000000000000000001010, write_reg=$4, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'alu_op': 00, 'mem_write': 0, 'alu_src': 1, 'reg_write': 1}, instruction_eng='addi $a0, $0, 10')
+Execution(zero=00000000000000000000000000000000, alu_result=00000000000000000000000000001000, write_data=$0, write_reg=$16, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'mem_write': 0, 'reg_write': 1}, instruction_eng='add $s0 $v0 $0')
+Memory(read_data=None, alu_result=None, write_reg=None, control_signal=None, instruction_eng=None)
+Write_back(instruction_eng='jra')
+
+Memory content []
+Register content [(2, 00000000000000000000000000001000), (4, 00000000000000000000000000000101), (5, 00000000000000000000000000000011), (31, 00000000000000000000000000000011)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000000111, instruction=00001100000000000000000000101000, instruction_eng='jal sub_both')
+Instruction_Decode(read_data1=$0, read_data2=$5, sign_extend=00000000000000000000000000000001, write_reg=$5, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'alu_op': 00, 'mem_write': 0, 'alu_src': 1, 'reg_write': 1}, instruction_eng='addi $a1, $0, 1')
+Execution(zero=00000000000000000000000000000000, alu_result=00000000000000000000000000001010, write_data=$4, write_reg=$4, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'mem_write': 0, 'reg_write': 1}, instruction_eng='addi $a0, $0, 10')
+Memory(read_data=None, alu_result=00000000000000000000000000001000, write_reg=$16, control_signal={'mem_to_reg': 0, 'reg_write': 1}, instruction_eng='add $s0 $v0 $0')
+Write_back(instruction_eng=False)
+
+Memory content []
+Register content [(2, 00000000000000000000000000001000), (4, 00000000000000000000000000000101), (5, 00000000000000000000000000000011), (31, 00000000000000000000000000000011)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000001000, instruction=00000000010000001000100000100000, instruction_eng='add $s1 $v0 $0')
+Instruction_Decode(read_data1=$0, read_data2=$0, sign_extend=00000000000000000000000000101000, write_reg=$0, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'alu_op': 00, 'mem_write': 0, 'alu_src': 0, 'reg_write': 0}, instruction_eng='jal sub_both')
+Execution(zero=00000000000000000000000000000000, alu_result=00000000000000000000000000000001, write_data=$5, write_reg=$5, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'mem_write': 0, 'reg_write': 1}, instruction_eng='addi $a1, $0, 1')
+Memory(read_data=None, alu_result=00000000000000000000000000001010, write_reg=$4, control_signal={'mem_to_reg': 0, 'reg_write': 1}, instruction_eng='addi $a0, $0, 10')
+Write_back(instruction_eng='add $s0 $v0 $0')
+
+Memory content []
+Register content [(2, 00000000000000000000000000001000), (4, 00000000000000000000000000000101), (5, 00000000000000000000000000000011), (16, 00000000000000000000000000001000), (31, 00000000000000000000000000000111)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000101001, instruction=00000000100001010001000000100010, instruction_eng='sub $v0 $a0 $a1')
+Instruction_Decode(read_data1=None, read_data2=None, sign_extend=None, write_reg=None, control_signal=None, instruction_eng=None)
+Execution(zero=00000000000000000000000000000001, alu_result=00000000000000000000000000000000, write_data=$0, write_reg=$0, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'mem_write': 0, 'reg_write': 0}, instruction_eng='jal sub_both')
+Memory(read_data=None, alu_result=00000000000000000000000000000001, write_reg=$5, control_signal={'mem_to_reg': 0, 'reg_write': 1}, instruction_eng='addi $a1, $0, 1')
+Write_back(instruction_eng='addi $a0, $0, 10')
+
+Memory content []
+Register content [(2, 00000000000000000000000000001000), (4, 00000000000000000000000000001010), (5, 00000000000000000000000000000011), (16, 00000000000000000000000000001000), (31, 00000000000000000000000000000111)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000101010, instruction=00011100000000000000000000000000, instruction_eng='jra')
+Instruction_Decode(read_data1=$4, read_data2=$5, sign_extend=00000000000000000001000000100010, write_reg=$2, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'alu_op': 10, 'mem_write': 0, 'alu_src': 0, 'reg_write': 1}, instruction_eng='sub $v0 $a0 $a1')
+Execution(zero=None, alu_result=None, write_data=None, write_reg=None, control_signal=None, instruction_eng=None)
+Memory(read_data=None, alu_result=00000000000000000000000000000000, write_reg=$0, control_signal={'mem_to_reg': 0, 'reg_write': 0}, instruction_eng='jal sub_both')
+Write_back(instruction_eng='addi $a1, $0, 1')
+
+Memory content []
+Register content [(2, 00000000000000000000000000001000), (4, 00000000000000000000000000001010), (5, 00000000000000000000000000000001), (16, 00000000000000000000000000001000), (31, 00000000000000000000000000000111)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000101011, instruction=00000000100001010001000000100100, instruction_eng='and $v0 $a0 $a1')
+Instruction_Decode(read_data1=$0, read_data2=$0, sign_extend=00000000000000000000000000000000, write_reg=$0, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'alu_op': 00, 'mem_write': 0, 'alu_src': 0, 'reg_write': 0}, instruction_eng='jra')
+Execution(zero=00000000000000000000000000000000, alu_result=00000000000000000000000000001001, write_data=$5, write_reg=$2, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'mem_write': 0, 'reg_write': 1}, instruction_eng='sub $v0 $a0 $a1')
+Memory(read_data=None, alu_result=None, write_reg=None, control_signal=None, instruction_eng=None)
+Write_back(instruction_eng='jal sub_both')
+
+Memory content []
+Register content [(2, 00000000000000000000000000001000), (4, 00000000000000000000000000001010), (5, 00000000000000000000000000000001), (16, 00000000000000000000000000001000), (31, 00000000000000000000000000000111)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000001000, instruction=00000000010000001000100000100000, instruction_eng='add $s1 $v0 $0')
+Instruction_Decode(read_data1=None, read_data2=None, sign_extend=None, write_reg=None, control_signal=None, instruction_eng=None)
+Execution(zero=00000000000000000000000000000001, alu_result=00000000000000000000000000000000, write_data=$0, write_reg=$0, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'mem_write': 0, 'reg_write': 0}, instruction_eng='jra')
+Memory(read_data=None, alu_result=00000000000000000000000000001001, write_reg=$2, control_signal={'mem_to_reg': 0, 'reg_write': 1}, instruction_eng='sub $v0 $a0 $a1')
+Write_back(instruction_eng=False)
+
+Memory content []
+Register content [(2, 00000000000000000000000000001000), (4, 00000000000000000000000000001010), (5, 00000000000000000000000000000001), (16, 00000000000000000000000000001000), (31, 00000000000000000000000000000111)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000001001, instruction=00100000000001000000010000010110, instruction_eng='addi `00100` `00000` `000010000010110`')
+Instruction_Decode(read_data1=$2, read_data2=$0, sign_extend=11111111111111111000100000100000, write_reg=$17, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'alu_op': 10, 'mem_write': 0, 'alu_src': 0, 'reg_write': 1}, instruction_eng='add $s1 $v0 $0')
+Execution(zero=None, alu_result=None, write_data=None, write_reg=None, control_signal=None, instruction_eng=None)
+Memory(read_data=None, alu_result=00000000000000000000000000000000, write_reg=$0, control_signal={'mem_to_reg': 0, 'reg_write': 0}, instruction_eng='jra')
+Write_back(instruction_eng='sub $v0 $a0 $a1')
+
+Memory content []
+Register content [(2, 00000000000000000000000000001001), (4, 00000000000000000000000000001010), (5, 00000000000000000000000000000001), (16, 00000000000000000000000000001000), (31, 00000000000000000000000000000111)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000001010, instruction=00100000000001010000010000010001, instruction_eng='addi `00101` `00000` `000010000010001`')
+Instruction_Decode(read_data1=$0, read_data2=$4, sign_extend=00000000000000000000010000010110, write_reg=$4, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'alu_op': 00, 'mem_write': 0, 'alu_src': 1, 'reg_write': 1}, instruction_eng='addi `00100` `00000` `000010000010110`')
+Execution(zero=00000000000000000000000000000000, alu_result=00000000000000000000000000001001, write_data=$0, write_reg=$17, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'mem_write': 0, 'reg_write': 1}, instruction_eng='add $s1 $v0 $0')
+Memory(read_data=None, alu_result=None, write_reg=None, control_signal=None, instruction_eng=None)
+Write_back(instruction_eng='jra')
+
+Memory content []
+Register content [(2, 00000000000000000000000000001001), (4, 00000000000000000000000000001010), (5, 00000000000000000000000000000001), (16, 00000000000000000000000000001000), (31, 00000000000000000000000000000111)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000001011, instruction=00001100000000000000000000101010, instruction_eng='jal and_both')
+Instruction_Decode(read_data1=$0, read_data2=$5, sign_extend=00000000000000000000010000010001, write_reg=$5, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'alu_op': 00, 'mem_write': 0, 'alu_src': 1, 'reg_write': 1}, instruction_eng='addi `00101` `00000` `000010000010001`')
+Execution(zero=00000000000000000000000000000000, alu_result=00000000000000000000010000010110, write_data=$4, write_reg=$4, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'mem_write': 0, 'reg_write': 1}, instruction_eng='addi `00100` `00000` `000010000010110`')
+Memory(read_data=None, alu_result=00000000000000000000000000001001, write_reg=$17, control_signal={'mem_to_reg': 0, 'reg_write': 1}, instruction_eng='add $s1 $v0 $0')
+Write_back(instruction_eng=False)
+
+Memory content []
+Register content [(2, 00000000000000000000000000001001), (4, 00000000000000000000000000001010), (5, 00000000000000000000000000000001), (16, 00000000000000000000000000001000), (31, 00000000000000000000000000000111)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000001100, instruction=00000000010000001001000000100000, instruction_eng='add $s2 $v0 $0')
+Instruction_Decode(read_data1=$0, read_data2=$0, sign_extend=00000000000000000000000000101010, write_reg=$0, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'alu_op': 00, 'mem_write': 0, 'alu_src': 0, 'reg_write': 0}, instruction_eng='jal and_both')
+Execution(zero=00000000000000000000000000000000, alu_result=00000000000000000000010000010001, write_data=$5, write_reg=$5, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'mem_write': 0, 'reg_write': 1}, instruction_eng='addi `00101` `00000` `000010000010001`')
+Memory(read_data=None, alu_result=00000000000000000000010000010110, write_reg=$4, control_signal={'mem_to_reg': 0, 'reg_write': 1}, instruction_eng='addi `00100` `00000` `000010000010110`')
+Write_back(instruction_eng='add $s1 $v0 $0')
+
+Memory content []
+Register content [(2, 00000000000000000000000000001001), (4, 00000000000000000000000000001010), (5, 00000000000000000000000000000001), (16, 00000000000000000000000000001000), (17, 00000000000000000000000000001001), (31, 00000000000000000000000000001011)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000101011, instruction=00000000100001010001000000100100, instruction_eng='and $v0 $a0 $a1')
+Instruction_Decode(read_data1=None, read_data2=None, sign_extend=None, write_reg=None, control_signal=None, instruction_eng=None)
+Execution(zero=00000000000000000000000000000001, alu_result=00000000000000000000000000000000, write_data=$0, write_reg=$0, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'mem_write': 0, 'reg_write': 0}, instruction_eng='jal and_both')
+Memory(read_data=None, alu_result=00000000000000000000010000010001, write_reg=$5, control_signal={'mem_to_reg': 0, 'reg_write': 1}, instruction_eng='addi `00101` `00000` `000010000010001`')
+Write_back(instruction_eng='addi `00100` `00000` `000010000010110`')
+
+Memory content []
+Register content [(2, 00000000000000000000000000001001), (4, 00000000000000000000010000010110), (5, 00000000000000000000000000000001), (16, 00000000000000000000000000001000), (17, 00000000000000000000000000001001), (31, 00000000000000000000000000001011)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000101100, instruction=00011100000000000000000000000000, instruction_eng='jra')
+Instruction_Decode(read_data1=$4, read_data2=$5, sign_extend=00000000000000000001000000100100, write_reg=$2, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'alu_op': 10, 'mem_write': 0, 'alu_src': 0, 'reg_write': 1}, instruction_eng='and $v0 $a0 $a1')
+Execution(zero=None, alu_result=None, write_data=None, write_reg=None, control_signal=None, instruction_eng=None)
+Memory(read_data=None, alu_result=00000000000000000000000000000000, write_reg=$0, control_signal={'mem_to_reg': 0, 'reg_write': 0}, instruction_eng='jal and_both')
+Write_back(instruction_eng='addi `00101` `00000` `000010000010001`')
+
+Memory content []
+Register content [(2, 00000000000000000000000000001001), (4, 00000000000000000000010000010110), (5, 00000000000000000000010000010001), (16, 00000000000000000000000000001000), (17, 00000000000000000000000000001001), (31, 00000000000000000000000000001011)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000101101, instruction=00000000100001010001000000100101, instruction_eng='or $v0 $a0 $a1')
+Instruction_Decode(read_data1=$0, read_data2=$0, sign_extend=00000000000000000000000000000000, write_reg=$0, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'alu_op': 00, 'mem_write': 0, 'alu_src': 0, 'reg_write': 0}, instruction_eng='jra')
+Execution(zero=00000000000000000000000000000000, alu_result=00000000000000000000010000010000, write_data=$5, write_reg=$2, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'mem_write': 0, 'reg_write': 1}, instruction_eng='and $v0 $a0 $a1')
+Memory(read_data=None, alu_result=None, write_reg=None, control_signal=None, instruction_eng=None)
+Write_back(instruction_eng='jal and_both')
+
+Memory content []
+Register content [(2, 00000000000000000000000000001001), (4, 00000000000000000000010000010110), (5, 00000000000000000000010000010001), (16, 00000000000000000000000000001000), (17, 00000000000000000000000000001001), (31, 00000000000000000000000000001011)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000001100, instruction=00000000010000001001000000100000, instruction_eng='add $s2 $v0 $0')
+Instruction_Decode(read_data1=None, read_data2=None, sign_extend=None, write_reg=None, control_signal=None, instruction_eng=None)
+Execution(zero=00000000000000000000000000000001, alu_result=00000000000000000000000000000000, write_data=$0, write_reg=$0, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'mem_write': 0, 'reg_write': 0}, instruction_eng='jra')
+Memory(read_data=None, alu_result=00000000000000000000010000010000, write_reg=$2, control_signal={'mem_to_reg': 0, 'reg_write': 1}, instruction_eng='and $v0 $a0 $a1')
+Write_back(instruction_eng=False)
+
+Memory content []
+Register content [(2, 00000000000000000000000000001001), (4, 00000000000000000000010000010110), (5, 00000000000000000000010000010001), (16, 00000000000000000000000000001000), (17, 00000000000000000000000000001001), (31, 00000000000000000000000000001011)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000001101, instruction=00100000000001000000000000001010, instruction_eng='addi $a0 $0 10')
+Instruction_Decode(read_data1=$2, read_data2=$0, sign_extend=11111111111111111001000000100000, write_reg=$18, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'alu_op': 10, 'mem_write': 0, 'alu_src': 0, 'reg_write': 1}, instruction_eng='add $s2 $v0 $0')
+Execution(zero=None, alu_result=None, write_data=None, write_reg=None, control_signal=None, instruction_eng=None)
+Memory(read_data=None, alu_result=00000000000000000000000000000000, write_reg=$0, control_signal={'mem_to_reg': 0, 'reg_write': 0}, instruction_eng='jra')
+Write_back(instruction_eng='and $v0 $a0 $a1')
+
+Memory content []
+Register content [(2, 00000000000000000000010000010000), (4, 00000000000000000000010000010110), (5, 00000000000000000000010000010001), (16, 00000000000000000000000000001000), (17, 00000000000000000000000000001001), (31, 00000000000000000000000000001011)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000001110, instruction=00100000000001010000000000000101, instruction_eng='addi $a1 $0 5')
+Instruction_Decode(read_data1=$0, read_data2=$4, sign_extend=00000000000000000000000000001010, write_reg=$4, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'alu_op': 00, 'mem_write': 0, 'alu_src': 1, 'reg_write': 1}, instruction_eng='addi $a0 $0 10')
+Execution(zero=00000000000000000000000000000000, alu_result=00000000000000000000010000010000, write_data=$0, write_reg=$18, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'mem_write': 0, 'reg_write': 1}, instruction_eng='add $s2 $v0 $0')
+Memory(read_data=None, alu_result=None, write_reg=None, control_signal=None, instruction_eng=None)
+Write_back(instruction_eng='jra')
+
+Memory content []
+Register content [(2, 00000000000000000000010000010000), (4, 00000000000000000000010000010110), (5, 00000000000000000000010000010001), (16, 00000000000000000000000000001000), (17, 00000000000000000000000000001001), (31, 00000000000000000000000000001011)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000001111, instruction=00001100000000000000000000101100, instruction_eng='jal or_both')
+Instruction_Decode(read_data1=$0, read_data2=$5, sign_extend=00000000000000000000000000000101, write_reg=$5, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'alu_op': 00, 'mem_write': 0, 'alu_src': 1, 'reg_write': 1}, instruction_eng='addi $a1 $0 5')
+Execution(zero=00000000000000000000000000000000, alu_result=00000000000000000000000000001010, write_data=$4, write_reg=$4, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'mem_write': 0, 'reg_write': 1}, instruction_eng='addi $a0 $0 10')
+Memory(read_data=None, alu_result=00000000000000000000010000010000, write_reg=$18, control_signal={'mem_to_reg': 0, 'reg_write': 1}, instruction_eng='add $s2 $v0 $0')
+Write_back(instruction_eng=False)
+
+Memory content []
+Register content [(2, 00000000000000000000010000010000), (4, 00000000000000000000010000010110), (5, 00000000000000000000010000010001), (16, 00000000000000000000000000001000), (17, 00000000000000000000000000001001), (31, 00000000000000000000000000001011)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000010000, instruction=00000000010000001001100000100000, instruction_eng='add $s3 $v0 $0')
+Instruction_Decode(read_data1=$0, read_data2=$0, sign_extend=00000000000000000000000000101100, write_reg=$0, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'alu_op': 00, 'mem_write': 0, 'alu_src': 0, 'reg_write': 0}, instruction_eng='jal or_both')
+Execution(zero=00000000000000000000000000000000, alu_result=00000000000000000000000000000101, write_data=$5, write_reg=$5, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'mem_write': 0, 'reg_write': 1}, instruction_eng='addi $a1 $0 5')
+Memory(read_data=None, alu_result=00000000000000000000000000001010, write_reg=$4, control_signal={'mem_to_reg': 0, 'reg_write': 1}, instruction_eng='addi $a0 $0 10')
+Write_back(instruction_eng='add $s2 $v0 $0')
+
+Memory content []
+Register content [(2, 00000000000000000000010000010000), (4, 00000000000000000000010000010110), (5, 00000000000000000000010000010001), (16, 00000000000000000000000000001000), (17, 00000000000000000000000000001001), (18, 00000000000000000000010000010000), (31, 00000000000000000000000000001111)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000101101, instruction=00000000100001010001000000100101, instruction_eng='or $v0 $a0 $a1')
+Instruction_Decode(read_data1=None, read_data2=None, sign_extend=None, write_reg=None, control_signal=None, instruction_eng=None)
+Execution(zero=00000000000000000000000000000001, alu_result=00000000000000000000000000000000, write_data=$0, write_reg=$0, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'mem_write': 0, 'reg_write': 0}, instruction_eng='jal or_both')
+Memory(read_data=None, alu_result=00000000000000000000000000000101, write_reg=$5, control_signal={'mem_to_reg': 0, 'reg_write': 1}, instruction_eng='addi $a1 $0 5')
+Write_back(instruction_eng='addi $a0 $0 10')
+
+Memory content []
+Register content [(2, 00000000000000000000010000010000), (4, 00000000000000000000000000001010), (5, 00000000000000000000010000010001), (16, 00000000000000000000000000001000), (17, 00000000000000000000000000001001), (18, 00000000000000000000010000010000), (31, 00000000000000000000000000001111)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000101110, instruction=00011100000000000000000000000000, instruction_eng='jra')
+Instruction_Decode(read_data1=$4, read_data2=$5, sign_extend=00000000000000000001000000100101, write_reg=$2, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'alu_op': 10, 'mem_write': 0, 'alu_src': 0, 'reg_write': 1}, instruction_eng='or $v0 $a0 $a1')
+Execution(zero=None, alu_result=None, write_data=None, write_reg=None, control_signal=None, instruction_eng=None)
+Memory(read_data=None, alu_result=00000000000000000000000000000000, write_reg=$0, control_signal={'mem_to_reg': 0, 'reg_write': 0}, instruction_eng='jal or_both')
+Write_back(instruction_eng='addi $a1 $0 5')
+
+Memory content []
+Register content [(2, 00000000000000000000010000010000), (4, 00000000000000000000000000001010), (5, 00000000000000000000000000000101), (16, 00000000000000000000000000001000), (17, 00000000000000000000000000001001), (18, 00000000000000000000010000010000), (31, 00000000000000000000000000001111)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000101111, instruction=00000000100001010001000000100111, instruction_eng='nor $v0 $a0 $a1')
+Instruction_Decode(read_data1=$0, read_data2=$0, sign_extend=00000000000000000000000000000000, write_reg=$0, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'alu_op': 00, 'mem_write': 0, 'alu_src': 0, 'reg_write': 0}, instruction_eng='jra')
+Execution(zero=00000000000000000000000000000000, alu_result=00000000000000000000000000001111, write_data=$5, write_reg=$2, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'mem_write': 0, 'reg_write': 1}, instruction_eng='or $v0 $a0 $a1')
+Memory(read_data=None, alu_result=None, write_reg=None, control_signal=None, instruction_eng=None)
+Write_back(instruction_eng='jal or_both')
+
+Memory content []
+Register content [(2, 00000000000000000000010000010000), (4, 00000000000000000000000000001010), (5, 00000000000000000000000000000101), (16, 00000000000000000000000000001000), (17, 00000000000000000000000000001001), (18, 00000000000000000000010000010000), (31, 00000000000000000000000000001111)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000010000, instruction=00000000010000001001100000100000, instruction_eng='add $s3 $v0 $0')
+Instruction_Decode(read_data1=None, read_data2=None, sign_extend=None, write_reg=None, control_signal=None, instruction_eng=None)
+Execution(zero=00000000000000000000000000000001, alu_result=00000000000000000000000000000000, write_data=$0, write_reg=$0, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'mem_write': 0, 'reg_write': 0}, instruction_eng='jra')
+Memory(read_data=None, alu_result=00000000000000000000000000001111, write_reg=$2, control_signal={'mem_to_reg': 0, 'reg_write': 1}, instruction_eng='or $v0 $a0 $a1')
+Write_back(instruction_eng=False)
+
+Memory content []
+Register content [(2, 00000000000000000000010000010000), (4, 00000000000000000000000000001010), (5, 00000000000000000000000000000101), (16, 00000000000000000000000000001000), (17, 00000000000000000000000000001001), (18, 00000000000000000000010000010000), (31, 00000000000000000000000000001111)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000010001, instruction=00100000000001000000000000000101, instruction_eng='`00100000000001000000000000000101`')
+Instruction_Decode(read_data1=$2, read_data2=$0, sign_extend=11111111111111111001100000100000, write_reg=$19, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'alu_op': 10, 'mem_write': 0, 'alu_src': 0, 'reg_write': 1}, instruction_eng='add $s3 $v0 $0')
+Execution(zero=None, alu_result=None, write_data=None, write_reg=None, control_signal=None, instruction_eng=None)
+Memory(read_data=None, alu_result=00000000000000000000000000000000, write_reg=$0, control_signal={'mem_to_reg': 0, 'reg_write': 0}, instruction_eng='jra')
+Write_back(instruction_eng='or $v0 $a0 $a1')
+
+Memory content []
+Register content [(2, 00000000000000000000000000001111), (4, 00000000000000000000000000001010), (5, 00000000000000000000000000000101), (16, 00000000000000000000000000001000), (17, 00000000000000000000000000001001), (18, 00000000000000000000010000010000), (31, 00000000000000000000000000001111)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000010010, instruction=00100000000001010000000000100001, instruction_eng='`00100000000001010000000000100001`')
+Instruction_Decode(read_data1=$0, read_data2=$4, sign_extend=00000000000000000000000000000101, write_reg=$4, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'alu_op': 00, 'mem_write': 0, 'alu_src': 1, 'reg_write': 1}, instruction_eng='`00100000000001000000000000000101`')
+Execution(zero=00000000000000000000000000000000, alu_result=00000000000000000000000000001111, write_data=$0, write_reg=$19, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'mem_write': 0, 'reg_write': 1}, instruction_eng='add $s3 $v0 $0')
+Memory(read_data=None, alu_result=None, write_reg=None, control_signal=None, instruction_eng=None)
+Write_back(instruction_eng='jra')
+
+Memory content []
+Register content [(2, 00000000000000000000000000001111), (4, 00000000000000000000000000001010), (5, 00000000000000000000000000000101), (16, 00000000000000000000000000001000), (17, 00000000000000000000000000001001), (18, 00000000000000000000010000010000), (31, 00000000000000000000000000001111)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000010011, instruction=00000000000000000000000000000000, instruction_eng='nop')
+Instruction_Decode(read_data1=$0, read_data2=$5, sign_extend=00000000000000000000000000100001, write_reg=$5, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'alu_op': 00, 'mem_write': 0, 'alu_src': 1, 'reg_write': 1}, instruction_eng='`00100000000001010000000000100001`')
+Execution(zero=00000000000000000000000000000000, alu_result=00000000000000000000000000000101, write_data=$4, write_reg=$4, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'mem_write': 0, 'reg_write': 1}, instruction_eng='`00100000000001000000000000000101`')
+Memory(read_data=None, alu_result=00000000000000000000000000001111, write_reg=$19, control_signal={'mem_to_reg': 0, 'reg_write': 1}, instruction_eng='add $s3 $v0 $0')
+Write_back(instruction_eng=False)
+
+Memory content []
+Register content [(2, 00000000000000000000000000001111), (4, 00000000000000000000000000001010), (5, 00000000000000000000000000000101), (16, 00000000000000000000000000001000), (17, 00000000000000000000000000001001), (18, 00000000000000000000010000010000), (31, 00000000000000000000000000001111)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000010100, instruction=00000000000000000000000000000000, instruction_eng='`00000000000000000000000000000000`')
+Instruction_Decode(read_data1=$0, read_data2=$0, sign_extend=00000000000000000000000000000000, write_reg=$0, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'alu_op': 10, 'mem_write': 0, 'alu_src': 0, 'reg_write': 1}, instruction_eng='nop')
+Execution(zero=00000000000000000000000000000000, alu_result=00000000000000000000000000100001, write_data=$5, write_reg=$5, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'mem_write': 0, 'reg_write': 1}, instruction_eng='`00100000000001010000000000100001`')
+Memory(read_data=None, alu_result=00000000000000000000000000000101, write_reg=$4, control_signal={'mem_to_reg': 0, 'reg_write': 1}, instruction_eng='`00100000000001000000000000000101`')
+Write_back(instruction_eng='add $s3 $v0 $0')
+
+Memory content []
+Register content [(2, 00000000000000000000000000001111), (4, 00000000000000000000000000001010), (5, 00000000000000000000000000000101), (16, 00000000000000000000000000001000), (17, 00000000000000000000000000001001), (18, 00000000000000000000010000010000), (19, 00000000000000000000000000001111), (31, 00000000000000000000000000001111)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000010101, instruction=00001100000000000000000000101110, instruction_eng='jal nor_both')
+Instruction_Decode(read_data1=$0, read_data2=$0, sign_extend=00000000000000000000000000000000, write_reg=$0, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'alu_op': 10, 'mem_write': 0, 'alu_src': 0, 'reg_write': 1}, instruction_eng='`00000000000000000000000000000000`')
+Execution(zero=00000000000000000000000000000001, alu_result=00000000000000000000000000000000, write_data=$0, write_reg=$0, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'mem_write': 0, 'reg_write': 1}, instruction_eng='nop')
+Memory(read_data=None, alu_result=00000000000000000000000000100001, write_reg=$5, control_signal={'mem_to_reg': 0, 'reg_write': 1}, instruction_eng='`00100000000001010000000000100001`')
+Write_back(instruction_eng='`00100000000001000000000000000101`')
+
+Memory content []
+Register content [(2, 00000000000000000000000000001111), (4, 00000000000000000000000000000101), (5, 00000000000000000000000000000101), (16, 00000000000000000000000000001000), (17, 00000000000000000000000000001001), (18, 00000000000000000000010000010000), (19, 00000000000000000000000000001111), (31, 00000000000000000000000000001111)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000010110, instruction=00000000010000001010000000100000, instruction_eng='add $s4 $v0 $0')
+Instruction_Decode(read_data1=$0, read_data2=$0, sign_extend=00000000000000000000000000101110, write_reg=$0, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'alu_op': 00, 'mem_write': 0, 'alu_src': 0, 'reg_write': 0}, instruction_eng='jal nor_both')
+Execution(zero=00000000000000000000000000000001, alu_result=00000000000000000000000000000000, write_data=$0, write_reg=$0, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'mem_write': 0, 'reg_write': 1}, instruction_eng='`00000000000000000000000000000000`')
+Memory(read_data=None, alu_result=00000000000000000000000000000000, write_reg=$0, control_signal={'mem_to_reg': 0, 'reg_write': 1}, instruction_eng='nop')
+Write_back(instruction_eng='`00100000000001010000000000100001`')
+
+Memory content []
+Register content [(2, 00000000000000000000000000001111), (4, 00000000000000000000000000000101), (5, 00000000000000000000000000100001), (16, 00000000000000000000000000001000), (17, 00000000000000000000000000001001), (18, 00000000000000000000010000010000), (19, 00000000000000000000000000001111), (31, 00000000000000000000000000010101)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000101111, instruction=00000000100001010001000000100111, instruction_eng='nor $v0 $a0 $a1')
+Instruction_Decode(read_data1=None, read_data2=None, sign_extend=None, write_reg=None, control_signal=None, instruction_eng=None)
+Execution(zero=00000000000000000000000000000001, alu_result=00000000000000000000000000000000, write_data=$0, write_reg=$0, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'mem_write': 0, 'reg_write': 0}, instruction_eng='jal nor_both')
+Memory(read_data=None, alu_result=00000000000000000000000000000000, write_reg=$0, control_signal={'mem_to_reg': 0, 'reg_write': 1}, instruction_eng='`00000000000000000000000000000000`')
+Write_back(instruction_eng='nop')
+
+Memory content []
+Register content [(2, 00000000000000000000000000001111), (4, 00000000000000000000000000000101), (5, 00000000000000000000000000100001), (16, 00000000000000000000000000001000), (17, 00000000000000000000000000001001), (18, 00000000000000000000010000010000), (19, 00000000000000000000000000001111), (31, 00000000000000000000000000010101)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000110000, instruction=00011100000000000000000000000000, instruction_eng='jra')
+Instruction_Decode(read_data1=$4, read_data2=$5, sign_extend=00000000000000000001000000100111, write_reg=$2, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'alu_op': 10, 'mem_write': 0, 'alu_src': 0, 'reg_write': 1}, instruction_eng='nor $v0 $a0 $a1')
+Execution(zero=None, alu_result=None, write_data=None, write_reg=None, control_signal=None, instruction_eng=None)
+Memory(read_data=None, alu_result=00000000000000000000000000000000, write_reg=$0, control_signal={'mem_to_reg': 0, 'reg_write': 0}, instruction_eng='jal nor_both')
+Write_back(instruction_eng='`00000000000000000000000000000000`')
+
+Memory content []
+Register content [(2, 00000000000000000000000000001111), (4, 00000000000000000000000000000101), (5, 00000000000000000000000000100001), (16, 00000000000000000000000000001000), (17, 00000000000000000000000000001001), (18, 00000000000000000000010000010000), (19, 00000000000000000000000000001111), (31, 00000000000000000000000000010101)]
+#######################################################################################################
+Instruction_Fetch(pc_4=None, instruction=None, instruction_eng=None)
+Instruction_Decode(read_data1=$0, read_data2=$0, sign_extend=00000000000000000000000000000000, write_reg=$0, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'alu_op': 00, 'mem_write': 0, 'alu_src': 0, 'reg_write': 0}, instruction_eng='jra')
+Execution(zero=00000000000000000000000000000000, alu_result=11111111111111111111111111011010, write_data=$5, write_reg=$2, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'mem_write': 0, 'reg_write': 1}, instruction_eng='nor $v0 $a0 $a1')
+Memory(read_data=None, alu_result=None, write_reg=None, control_signal=None, instruction_eng=None)
+Write_back(instruction_eng='jal nor_both')
+
+Memory content []
+Register content [(2, 00000000000000000000000000001111), (4, 00000000000000000000000000000101), (5, 00000000000000000000000000100001), (16, 00000000000000000000000000001000), (17, 00000000000000000000000000001001), (18, 00000000000000000000010000010000), (19, 00000000000000000000000000001111), (31, 00000000000000000000000000010101)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000010110, instruction=00000000010000001010000000100000, instruction_eng='add $s4 $v0 $0')
+Instruction_Decode(read_data1=None, read_data2=None, sign_extend=None, write_reg=None, control_signal=None, instruction_eng=None)
+Execution(zero=00000000000000000000000000000001, alu_result=00000000000000000000000000000000, write_data=$0, write_reg=$0, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'mem_write': 0, 'reg_write': 0}, instruction_eng='jra')
+Memory(read_data=None, alu_result=11111111111111111111111111011010, write_reg=$2, control_signal={'mem_to_reg': 0, 'reg_write': 1}, instruction_eng='nor $v0 $a0 $a1')
+Write_back(instruction_eng=False)
+
+Memory content []
+Register content [(2, 00000000000000000000000000001111), (4, 00000000000000000000000000000101), (5, 00000000000000000000000000100001), (16, 00000000000000000000000000001000), (17, 00000000000000000000000000001001), (18, 00000000000000000000010000010000), (19, 00000000000000000000000000001111), (31, 00000000000000000000000000010101)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000010111, instruction=00000010010100010100000000101010, instruction_eng='slt $t0 $s2 $s1')
+Instruction_Decode(read_data1=$2, read_data2=$0, sign_extend=11111111111111111010000000100000, write_reg=$20, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'alu_op': 10, 'mem_write': 0, 'alu_src': 0, 'reg_write': 1}, instruction_eng='add $s4 $v0 $0')
+Execution(zero=None, alu_result=None, write_data=None, write_reg=None, control_signal=None, instruction_eng=None)
+Memory(read_data=None, alu_result=00000000000000000000000000000000, write_reg=$0, control_signal={'mem_to_reg': 0, 'reg_write': 0}, instruction_eng='jra')
+Write_back(instruction_eng='nor $v0 $a0 $a1')
+
+Memory content []
+Register content [(2, 11111111111111111111111111011010), (4, 00000000000000000000000000000101), (5, 00000000000000000000000000100001), (16, 00000000000000000000000000001000), (17, 00000000000000000000000000001001), (18, 00000000000000000000010000010000), (19, 00000000000000000000000000001111), (31, 00000000000000000000000000010101)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000011000, instruction=00000000000000000000000000000000, instruction_eng='nop')
+Instruction_Decode(read_data1=$18, read_data2=$17, sign_extend=00000000000000000100000000101010, write_reg=$8, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'alu_op': 10, 'mem_write': 0, 'alu_src': 0, 'reg_write': 1}, instruction_eng='slt $t0 $s2 $s1')
+Execution(zero=00000000000000000000000000000000, alu_result=11111111111111111111111111011010, write_data=$0, write_reg=$20, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'mem_write': 0, 'reg_write': 1}, instruction_eng='add $s4 $v0 $0')
+Memory(read_data=None, alu_result=None, write_reg=None, control_signal=None, instruction_eng=None)
+Write_back(instruction_eng='jra')
+
+Memory content []
+Register content [(2, 11111111111111111111111111011010), (4, 00000000000000000000000000000101), (5, 00000000000000000000000000100001), (16, 00000000000000000000000000001000), (17, 00000000000000000000000000001001), (18, 00000000000000000000010000010000), (19, 00000000000000000000000000001111), (31, 00000000000000000000000000010101)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000011001, instruction=00000000000000000000000000000000, instruction_eng='nop')
+Instruction_Decode(read_data1=$0, read_data2=$0, sign_extend=00000000000000000000000000000000, write_reg=$0, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'alu_op': 10, 'mem_write': 0, 'alu_src': 0, 'reg_write': 1}, instruction_eng='nop')
+Execution(zero=00000000000000000000000000000001, alu_result=00000000000000000000000000000000, write_data=$17, write_reg=$8, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'mem_write': 0, 'reg_write': 1}, instruction_eng='slt $t0 $s2 $s1')
+Memory(read_data=None, alu_result=11111111111111111111111111011010, write_reg=$20, control_signal={'mem_to_reg': 0, 'reg_write': 1}, instruction_eng='add $s4 $v0 $0')
+Write_back(instruction_eng=False)
+
+Memory content []
+Register content [(2, 11111111111111111111111111011010), (4, 00000000000000000000000000000101), (5, 00000000000000000000000000100001), (16, 00000000000000000000000000001000), (17, 00000000000000000000000000001001), (18, 00000000000000000000010000010000), (19, 00000000000000000000000000001111), (31, 00000000000000000000000000010101)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000011010, instruction=00000000000000000000000000000000, instruction_eng='nop')
+Instruction_Decode(read_data1=$0, read_data2=$0, sign_extend=00000000000000000000000000000000, write_reg=$0, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'alu_op': 10, 'mem_write': 0, 'alu_src': 0, 'reg_write': 1}, instruction_eng='nop')
+Execution(zero=00000000000000000000000000000001, alu_result=00000000000000000000000000000000, write_data=$0, write_reg=$0, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'mem_write': 0, 'reg_write': 1}, instruction_eng='nop')
+Memory(read_data=None, alu_result=00000000000000000000000000000000, write_reg=$8, control_signal={'mem_to_reg': 0, 'reg_write': 1}, instruction_eng='slt $t0 $s2 $s1')
+Write_back(instruction_eng='add $s4 $v0 $0')
+
+Memory content []
+Register content [(2, 11111111111111111111111111011010), (4, 00000000000000000000000000000101), (5, 00000000000000000000000000100001), (16, 00000000000000000000000000001000), (17, 00000000000000000000000000001001), (18, 00000000000000000000010000010000), (19, 00000000000000000000000000001111), (20, 11111111111111111111111111011010), (31, 00000000000000000000000000010101)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000011011, instruction=00010001000000000000000000000100, instruction_eng='beq $t0 $0 store_load_mem')
+Instruction_Decode(read_data1=$0, read_data2=$0, sign_extend=00000000000000000000000000000000, write_reg=$0, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'alu_op': 10, 'mem_write': 0, 'alu_src': 0, 'reg_write': 1}, instruction_eng='nop')
+Execution(zero=00000000000000000000000000000001, alu_result=00000000000000000000000000000000, write_data=$0, write_reg=$0, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'mem_write': 0, 'reg_write': 1}, instruction_eng='nop')
+Memory(read_data=None, alu_result=00000000000000000000000000000000, write_reg=$0, control_signal={'mem_to_reg': 0, 'reg_write': 1}, instruction_eng='nop')
+Write_back(instruction_eng='slt $t0 $s2 $s1')
+
+Memory content []
+Register content [(2, 11111111111111111111111111011010), (4, 00000000000000000000000000000101), (5, 00000000000000000000000000100001), (16, 00000000000000000000000000001000), (17, 00000000000000000000000000001001), (18, 00000000000000000000010000010000), (19, 00000000000000000000000000001111), (20, 11111111111111111111111111011010), (31, 00000000000000000000000000010101)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000011100, instruction=00000000000000000000000000000000, instruction_eng='nop')
+Instruction_Decode(read_data1=$8, read_data2=$0, sign_extend=00000000000000000000000000000100, write_reg=$0, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'alu_op': 01, 'mem_write': 0, 'alu_src': 0, 'reg_write': 0}, instruction_eng='beq $t0 $0 store_load_mem')
+Execution(zero=00000000000000000000000000000001, alu_result=00000000000000000000000000000000, write_data=$0, write_reg=$0, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'mem_write': 0, 'reg_write': 1}, instruction_eng='nop')
+Memory(read_data=None, alu_result=00000000000000000000000000000000, write_reg=$0, control_signal={'mem_to_reg': 0, 'reg_write': 1}, instruction_eng='nop')
+Write_back(instruction_eng='nop')
+
+Memory content []
+Register content [(2, 11111111111111111111111111011010), (4, 00000000000000000000000000000101), (5, 00000000000000000000000000100001), (16, 00000000000000000000000000001000), (17, 00000000000000000000000000001001), (18, 00000000000000000000010000010000), (19, 00000000000000000000000000001111), (20, 11111111111111111111111111011010), (31, 00000000000000000000000000010101)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000100000, instruction=10101100000100000000000000000000, instruction_eng='sw $s0 0($0)')
+Instruction_Decode(read_data1=None, read_data2=None, sign_extend=None, write_reg=None, control_signal=None, instruction_eng=None)
+Execution(zero=00000000000000000000000000000001, alu_result=00000000000000000000000000000000, write_data=$0, write_reg=$0, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'mem_write': 0, 'reg_write': 0}, instruction_eng='beq $t0 $0 store_load_mem')
+Memory(read_data=None, alu_result=00000000000000000000000000000000, write_reg=$0, control_signal={'mem_to_reg': 0, 'reg_write': 1}, instruction_eng='nop')
+Write_back(instruction_eng='nop')
+
+Memory content []
+Register content [(2, 11111111111111111111111111011010), (4, 00000000000000000000000000000101), (5, 00000000000000000000000000100001), (16, 00000000000000000000000000001000), (17, 00000000000000000000000000001001), (18, 00000000000000000000010000010000), (19, 00000000000000000000000000001111), (20, 11111111111111111111111111011010), (31, 00000000000000000000000000010101)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000100001, instruction=10101100000100010000000000000001, instruction_eng='sw $s1 1($0)')
+Instruction_Decode(read_data1=$0, read_data2=$16, sign_extend=00000000000000000000000000000000, write_reg=$16, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'alu_op': 00, 'mem_write': 1, 'alu_src': 1, 'reg_write': 0}, instruction_eng='sw $s0 0($0)')
+Execution(zero=None, alu_result=None, write_data=None, write_reg=None, control_signal=None, instruction_eng=None)
+Memory(read_data=None, alu_result=00000000000000000000000000000000, write_reg=$0, control_signal={'mem_to_reg': 0, 'reg_write': 0}, instruction_eng='beq $t0 $0 store_load_mem')
+Write_back(instruction_eng='nop')
+
+Memory content []
+Register content [(2, 11111111111111111111111111011010), (4, 00000000000000000000000000000101), (5, 00000000000000000000000000100001), (16, 00000000000000000000000000001000), (17, 00000000000000000000000000001001), (18, 00000000000000000000010000010000), (19, 00000000000000000000000000001111), (20, 11111111111111111111111111011010), (31, 00000000000000000000000000010101)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000100010, instruction=10101100000100100000000000000010, instruction_eng='sw $s2 2($0)')
+Instruction_Decode(read_data1=$0, read_data2=$17, sign_extend=00000000000000000000000000000001, write_reg=$17, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'alu_op': 00, 'mem_write': 1, 'alu_src': 1, 'reg_write': 0}, instruction_eng='sw $s1 1($0)')
+Execution(zero=00000000000000000000000000000001, alu_result=00000000000000000000000000000000, write_data=$16, write_reg=$16, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'mem_write': 1, 'reg_write': 0}, instruction_eng='sw $s0 0($0)')
+Memory(read_data=None, alu_result=None, write_reg=None, control_signal=None, instruction_eng=None)
+Write_back(instruction_eng='beq $t0 $0 store_load_mem')
+
+Memory content []
+Register content [(2, 11111111111111111111111111011010), (4, 00000000000000000000000000000101), (5, 00000000000000000000000000100001), (16, 00000000000000000000000000001000), (17, 00000000000000000000000000001001), (18, 00000000000000000000010000010000), (19, 00000000000000000000000000001111), (20, 11111111111111111111111111011010), (31, 00000000000000000000000000010101)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000100011, instruction=10101100000100110000000000000011, instruction_eng='sw $s3 3($0)')
+Instruction_Decode(read_data1=$0, read_data2=$18, sign_extend=00000000000000000000000000000010, write_reg=$18, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'alu_op': 00, 'mem_write': 1, 'alu_src': 1, 'reg_write': 0}, instruction_eng='sw $s2 2($0)')
+Execution(zero=00000000000000000000000000000000, alu_result=00000000000000000000000000000001, write_data=$17, write_reg=$17, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'mem_write': 1, 'reg_write': 0}, instruction_eng='sw $s1 1($0)')
+Memory(read_data=None, alu_result=00000000000000000000000000000000, write_reg=$16, control_signal={'mem_to_reg': 0, 'reg_write': 0}, instruction_eng='sw $s0 0($0)')
+Write_back(instruction_eng=False)
+
+Memory content [(0, 00000000000000000000000000001000)]
+Register content [(2, 11111111111111111111111111011010), (4, 00000000000000000000000000000101), (5, 00000000000000000000000000100001), (16, 00000000000000000000000000001000), (17, 00000000000000000000000000001001), (18, 00000000000000000000010000010000), (19, 00000000000000000000000000001111), (20, 11111111111111111111111111011010), (31, 00000000000000000000000000010101)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000100100, instruction=10101100000101000000000000000100, instruction_eng='sw $s4 4($0)')
+Instruction_Decode(read_data1=$0, read_data2=$19, sign_extend=00000000000000000000000000000011, write_reg=$19, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'alu_op': 00, 'mem_write': 1, 'alu_src': 1, 'reg_write': 0}, instruction_eng='sw $s3 3($0)')
+Execution(zero=00000000000000000000000000000000, alu_result=00000000000000000000000000000010, write_data=$18, write_reg=$18, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'mem_write': 1, 'reg_write': 0}, instruction_eng='sw $s2 2($0)')
+Memory(read_data=None, alu_result=00000000000000000000000000000001, write_reg=$17, control_signal={'mem_to_reg': 0, 'reg_write': 0}, instruction_eng='sw $s1 1($0)')
+Write_back(instruction_eng='sw $s0 0($0)')
+
+Memory content [(0, 00000000000000000000000000001000), (1, 00000000000000000000000000001001)]
+Register content [(2, 11111111111111111111111111011010), (4, 00000000000000000000000000000101), (5, 00000000000000000000000000100001), (16, 00000000000000000000000000001000), (17, 00000000000000000000000000001001), (18, 00000000000000000000010000010000), (19, 00000000000000000000000000001111), (20, 11111111111111111111111111011010), (31, 00000000000000000000000000010101)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000100101, instruction=10001100000100000000000000000100, instruction_eng='lw $s0 4($0)')
+Instruction_Decode(read_data1=$0, read_data2=$20, sign_extend=00000000000000000000000000000100, write_reg=$20, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'alu_op': 00, 'mem_write': 1, 'alu_src': 1, 'reg_write': 0}, instruction_eng='sw $s4 4($0)')
+Execution(zero=00000000000000000000000000000000, alu_result=00000000000000000000000000000011, write_data=$19, write_reg=$19, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'mem_write': 1, 'reg_write': 0}, instruction_eng='sw $s3 3($0)')
+Memory(read_data=None, alu_result=00000000000000000000000000000010, write_reg=$18, control_signal={'mem_to_reg': 0, 'reg_write': 0}, instruction_eng='sw $s2 2($0)')
+Write_back(instruction_eng='sw $s1 1($0)')
+
+Memory content [(0, 00000000000000000000000000001000), (1, 00000000000000000000000000001001), (2, 00000000000000000000010000010000)]
+Register content [(2, 11111111111111111111111111011010), (4, 00000000000000000000000000000101), (5, 00000000000000000000000000100001), (16, 00000000000000000000000000001000), (17, 00000000000000000000000000001001), (18, 00000000000000000000010000010000), (19, 00000000000000000000000000001111), (20, 11111111111111111111111111011010), (31, 00000000000000000000000000010101)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000100110, instruction=00001000000000000000000000110000, instruction_eng='j exit')
+Instruction_Decode(read_data1=$0, read_data2=$16, sign_extend=00000000000000000000000000000100, write_reg=$16, control_signal={'mem_read': 1, 'mem_to_reg': 1, 'alu_op': 00, 'mem_write': 0, 'alu_src': 1, 'reg_write': 1}, instruction_eng='lw $s0 4($0)')
+Execution(zero=00000000000000000000000000000000, alu_result=00000000000000000000000000000100, write_data=$20, write_reg=$20, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'mem_write': 1, 'reg_write': 0}, instruction_eng='sw $s4 4($0)')
+Memory(read_data=None, alu_result=00000000000000000000000000000011, write_reg=$19, control_signal={'mem_to_reg': 0, 'reg_write': 0}, instruction_eng='sw $s3 3($0)')
+Write_back(instruction_eng='sw $s2 2($0)')
+
+Memory content [(0, 00000000000000000000000000001000), (1, 00000000000000000000000000001001), (2, 00000000000000000000010000010000), (3, 00000000000000000000000000001111)]
+Register content [(2, 11111111111111111111111111011010), (4, 00000000000000000000000000000101), (5, 00000000000000000000000000100001), (16, 00000000000000000000000000001000), (17, 00000000000000000000000000001001), (18, 00000000000000000000010000010000), (19, 00000000000000000000000000001111), (20, 11111111111111111111111111011010), (31, 00000000000000000000000000010101)]
+#######################################################################################################
+Instruction_Fetch(pc_4=00000000000000000000000000100111, instruction=00000000100001010001000000100000, instruction_eng='add $v0 $a0 $a1')
+Instruction_Decode(read_data1=$0, read_data2=$0, sign_extend=00000000000000000000000000110000, write_reg=$0, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'alu_op': 00, 'mem_write': 0, 'alu_src': 0, 'reg_write': 0}, instruction_eng='j exit')
+Execution(zero=00000000000000000000000000000000, alu_result=00000000000000000000000000000100, write_data=$16, write_reg=$16, control_signal={'mem_read': 1, 'mem_to_reg': 1, 'mem_write': 0, 'reg_write': 1}, instruction_eng='lw $s0 4($0)')
+Memory(read_data=None, alu_result=00000000000000000000000000000100, write_reg=$20, control_signal={'mem_to_reg': 0, 'reg_write': 0}, instruction_eng='sw $s4 4($0)')
+Write_back(instruction_eng='sw $s3 3($0)')
+
+Memory content [(0, 00000000000000000000000000001000), (1, 00000000000000000000000000001001), (2, 00000000000000000000010000010000), (3, 00000000000000000000000000001111), (4, 11111111111111111111111111011010)]
+Register content [(2, 11111111111111111111111111011010), (4, 00000000000000000000000000000101), (5, 00000000000000000000000000100001), (16, 00000000000000000000000000001000), (17, 00000000000000000000000000001001), (18, 00000000000000000000010000010000), (19, 00000000000000000000000000001111), (20, 11111111111111111111111111011010), (31, 00000000000000000000000000010101)]
+#######################################################################################################
+Instruction_Fetch(pc_4=None, instruction=None, instruction_eng=None)
+Instruction_Decode(read_data1=None, read_data2=None, sign_extend=None, write_reg=None, control_signal=None, instruction_eng=None)
+Execution(zero=00000000000000000000000000000001, alu_result=00000000000000000000000000000000, write_data=$0, write_reg=$0, control_signal={'mem_read': 0, 'mem_to_reg': 0, 'mem_write': 0, 'reg_write': 0}, instruction_eng='j exit')
+Memory(read_data=11111111111111111111111111011010, alu_result=00000000000000000000000000000100, write_reg=$16, control_signal={'mem_to_reg': 1, 'reg_write': 1}, instruction_eng='lw $s0 4($0)')
+Write_back(instruction_eng='sw $s4 4($0)')
+
+Memory content [(0, 00000000000000000000000000001000), (1, 00000000000000000000000000001001), (2, 00000000000000000000010000010000), (3, 00000000000000000000000000001111), (4, 11111111111111111111111111011010)]
+Register content [(2, 11111111111111111111111111011010), (4, 00000000000000000000000000000101), (5, 00000000000000000000000000100001), (16, 00000000000000000000000000001000), (17, 00000000000000000000000000001001), (18, 00000000000000000000010000010000), (19, 00000000000000000000000000001111), (20, 11111111111111111111111111011010), (31, 00000000000000000000000000010101)]
+#######################################################################################################
+Instruction_Fetch(pc_4=None, instruction=None, instruction_eng=None)
+Instruction_Decode(read_data1=None, read_data2=None, sign_extend=None, write_reg=None, control_signal=None, instruction_eng=None)
+Execution(zero=None, alu_result=None, write_data=None, write_reg=None, control_signal=None, instruction_eng=None)
+Memory(read_data=None, alu_result=00000000000000000000000000000000, write_reg=$0, control_signal={'mem_to_reg': 0, 'reg_write': 0}, instruction_eng='j exit')
+Write_back(instruction_eng='lw $s0 4($0)')
+
+Memory content [(0, 00000000000000000000000000001000), (1, 00000000000000000000000000001001), (2, 00000000000000000000010000010000), (3, 00000000000000000000000000001111), (4, 11111111111111111111111111011010)]
+Register content [(2, 11111111111111111111111111011010), (4, 00000000000000000000000000000101), (5, 00000000000000000000000000100001), (16, 11111111111111111111111111011010), (17, 00000000000000000000000000001001), (18, 00000000000000000000010000010000), (19, 00000000000000000000000000001111), (20, 11111111111111111111111111011010), (31, 00000000000000000000000000010101)]
+#######################################################################################################
+Instruction_Fetch(pc_4=None, instruction=None, instruction_eng=None)
+Instruction_Decode(read_data1=None, read_data2=None, sign_extend=None, write_reg=None, control_signal=None, instruction_eng=None)
+Execution(zero=None, alu_result=None, write_data=None, write_reg=None, control_signal=None, instruction_eng=None)
+Memory(read_data=None, alu_result=None, write_reg=None, control_signal=None, instruction_eng=None)
+Write_back(instruction_eng='j exit')
+
+Memory content [(0, 00000000000000000000000000001000), (1, 00000000000000000000000000001001), (2, 00000000000000000000010000010000), (3, 00000000000000000000000000001111), (4, 11111111111111111111111111011010)]
+Register content [(2, 11111111111111111111111111011010), (4, 00000000000000000000000000000101), (5, 00000000000000000000000000100001), (16, 11111111111111111111111111011010), (17, 00000000000000000000000000001001), (18, 00000000000000000000010000010000), (19, 00000000000000000000000000001111), (20, 11111111111111111111111111011010), (31, 00000000000000000000000000010101)]
+#######################################################################################################
+Exited
+Instruction_Fetch(pc_4=None, instruction=None, instruction_eng=None)
+Instruction_Decode(read_data1=None, read_data2=None, sign_extend=None, write_reg=None, control_signal=None, instruction_eng=None)
+Execution(zero=None, alu_result=None, write_data=None, write_reg=None, control_signal=None, instruction_eng=None)
+Memory(read_data=None, alu_result=None, write_reg=None, control_signal=None, instruction_eng=None)
+Write_back(instruction_eng=False)
+
+Memory content [(0, 00000000000000000000000000001000), (1, 00000000000000000000000000001001), (2, 00000000000000000000010000010000), (3, 00000000000000000000000000001111), (4, 11111111111111111111111111011010)]
+Register content [(2, 11111111111111111111111111011010), (4, 00000000000000000000000000000101), (5, 00000000000000000000000000100001), (16, 11111111111111111111111111011010), (17, 00000000000000000000000000001001), (18, 00000000000000000000010000010000), (19, 00000000000000000000000000001111), (20, 11111111111111111111111111011010), (31, 00000000000000000000000000010101)]
+#######################################################################################################
