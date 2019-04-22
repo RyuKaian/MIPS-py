@@ -22,7 +22,7 @@ pc = Bin()
 ra = registers[31]
 if_id = (None, None, None)
 id_ex = (None, None, None, None, None, None)
-ex_mem = (None, None, None, None, None, None)
+ex_mem = (None, None, None, None, None)
 mem_wb = (None, None, None, None, None)
 flush = False
 
@@ -61,55 +61,49 @@ def instruction_decode(pc_4: Bin, instruction: Bin, instruction_eng):
 
 
 def jump_branch_handling(pc_4, sign_extended, instruction, read_data1, read_data2, control_signal):
-    global flush, pc
+    global flush, pc, infinite_loop_counter
     branch_address = pc_4 + sign_extended
-    jump_address = pc_4[26:32].concatenate(instruction[0:26])
+    jump_address = mux([pc_4[26:32].concatenate(instruction[0:26]),
+                        ra.read_data()], control_signal.pop('return_address'))
     zero = read_data1.read_data() == read_data2.read_data()
     branch = control_signal.pop('branch') & zero
     jump = control_signal.pop('jump')
-    link = control_signal.pop('link')
-    return_address = control_signal.pop('return_address')
 
+    if control_signal.pop('link'):
+        ra.write_data(pc_4)
+
+    next_address = mux([pc_4, branch_address], branch)
+    pc = mux([next_address, jump_address], jump)
     if branch | jump:
-        global infinite_loop_counter
-        if return_address:
-            jump_address = ra.read_data()
-        if link:
-            ra.write_data(pc_4)
-        next_address = mux([pc_4, branch_address], branch)
-        pc = mux([next_address, jump_address], jump)
-        if not infinite_loop_counter.get(str(pc)):
-            infinite_loop_counter[str(pc)] = 0
-        infinite_loop_counter[str(pc)] += 1
         flush = True
+
+    if not infinite_loop_counter.get(str(pc)):
+        infinite_loop_counter[str(pc)] = 0
+    infinite_loop_counter[str(pc)] += 1
 
 
 def execution(read_data1: Register, read_data2: Register,
               sign_extend: Bin, write_reg: Register, control_signal: dict, instruction_eng):
-    temp = namedtuple('Execution', [
-        'zero', 'alu_result', 'write_data', 'write_reg', 'control_signal', 'instruction_eng'
-    ])
+    temp = namedtuple('Execution', ['alu_result', 'write_data', 'write_reg', 'control_signal', 'instruction_eng'])
     if read_data1 is None or\
             read_data2 is None or\
             sign_extend is None or\
             write_reg is None or\
             control_signal is None:
-        return temp(None, None, None, None, None, None)
+        return temp(None, None, None, None, None)
 
     alu_control = alu_control_unit(control_signal.pop('alu_op'), sign_extend[0:6])
     read_data_2_alu = mux([read_data2.read_data(), sign_extend], control_signal.pop('alu_src'))
     alu_out = alu(read_data1.read_data(), read_data_2_alu, alu_control)
 
-    return temp(alu_out.zero, alu_out.result, read_data2, write_reg, control_signal, instruction_eng)
+    return temp(alu_out.result, read_data2, write_reg, control_signal, instruction_eng)
 
 
-def memory(
-        zero: Bin, alu_result: Bin, write_data: Register, write_reg: Register, control_signal: dict, instruction_eng):
+def memory(alu_result: Bin, write_data: Register, write_reg: Register, control_signal: dict, instruction_eng):
     temp = namedtuple('Memory', [
         'read_data', 'alu_result', 'write_reg', 'control_signal', 'instruction_eng'
     ])
-    if zero is None or\
-            alu_result is None or\
+    if alu_result is None or\
             write_data is None or\
             write_reg is None or\
             control_signal is None:
